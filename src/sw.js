@@ -30,7 +30,7 @@ self.addEventListener('activate', event => {
     }
   ));
 
-  navigator.confirmWebWideTrackingException.onchange = (e) => {
+  navigator.connection.onchange = (e) => {
     console.log('network change');
     console.log(e);
   };
