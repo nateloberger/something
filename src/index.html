@@ -1,13 +1,35 @@
 <!doctype html>
 <html lang="en">
 
-  <head>
-    <meta charset="utf-8">
-    <title>Something</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <title>Something</title>
+  <meta name="description" content="Something really awesome!">
 
-  <body>
-    <h1>It's gonna be great!</h1>
-  </body>
+  <!-- iOS meta tags and icons because Safari doesn't support manifest.json yet -->
+  <!-- TODO - double check iOS doesn't support this now -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Som'in">
+  <link rel="apple-touch-icon" href="/assets/fire.png">
+
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+</head>
+
+<body>
+  <h1>It's gonna be great!</h1>
+</body>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(function () {
+        console.log('Service Worker Registered!');
+      });
+  }
+</script>
 
 </html>
